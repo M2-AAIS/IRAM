@@ -1,22 +1,152 @@
-\documentclass[a4paper,11pt]{article}
-\usepackage{fullpage}
-\usepackage[french]{babel}
-\usepackage[utf8]{inputenc} 
-\usepackage{amsmath} 
-\usepackage{indentfirst}
+\documentclass[a4paper,11pt,french]{article}
+
+\usepackage[
+    pdftex,
+    margin=2cm,
+    headheight=0.4cm,
+    headsep=0.8cm,
+    footskip=1.2cm,
+    nomarginpar,
+]{geometry}
+
+\usepackage{xcolor}
+\definecolor{linkcolor}{rgb}{0, 0, 0.6}
+\usepackage[
+    pdftex,
+    unicode=true,
+    pdfstartview=FitV,
+    colorlinks=true,
+    citecolor=linkcolor,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    hyperindex=true,
+]{hyperref}
+
+\usepackage{amsmath} % Est-ce qu’on va vraiment s’en servir ?
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{babel}
+
 \usepackage{graphicx}
-\usepackage{subfigure}
+\graphicspath{{figures/}}
+\usepackage{subcaption}
 
-\author{Franco Maximilien, Menu Mélissa, Pagani Bruno, Vatant--d'Ollone Jan}
+\usepackage{titling}
+\title{Stage d’observation à l’IRAM}
+\author{Maximilien Franco, Mélissa Menu, Bruno Pagani \& Jan Vatant--d’Ollone}
+\date{14 au 19 mars 2016}
 
-\date{}
+\hypersetup{
+    pdfauthor={\theauthor},
+    pdftitle={M2 AAIS – Stage en Observatoire},
+    pdfsubject={\thetitle},
+    pdfkeywords={M2 AAIS, Observatoire, IRAM, Grenade, 30m}
+}
 
-\title{Projet observationnel à l'IRAM}
-
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{\scriptsize\textsc{\thetitle}}
+\fancyhead[R]{\scriptsize\textsc{\theauthor}}
+\fancyfoot[C]{\thepage}
 
 \begin{document}
 
-\maketitle
+\pagenumbering{roman}
+
+% Pour faciliter la mise en forme des pages de garde, on supprime l’indentation
+% automatique en début de paragraphe
+\setlength{\parindent}{0pt}
+
+% Pas d’en-tête ni de pied pour la première page
+\thispagestyle{empty}
+
+\includegraphics[height=2cm]{logo_insu.jpg} \hfill
+\includegraphics[height=2cm]{logo_obspm.jpg} \hfill
+\includegraphics[height=2cm]{logo_iap.jpg} \hfill
+\includegraphics[height=2cm]{logo_psl.png}
+
+\vspace{0.5cm}
+
+\noindent
+\begin{minipage}{.5\textwidth}
+    \textsc{Master Astronomie, Astrophysique} \\
+    \textsc{et Ingénierie Spatiale} \\
+    \textit{M2R – Observatoire de Paris}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+    \begin{flushright}
+        Stage d’Observation 2015--2016 \\
+        Maximilien \textsc{Franco}, Mélissa \textsc{Menu}, \\
+        Bruno \textsc{Pagani} \& Jan \textsc{Vatant--d’Ollone}
+    \end{flushright}
+\end{minipage}
+
+
+\begin{center}
+
+    \vspace{1.5cm}
+
+    \rule[11pt]{5cm}{0.5pt}
+
+    \textbf{\huge \thetitle}
+
+    \rule{5cm}{0.5pt}
+
+    \vspace{1.5cm}
+
+    \parbox{15cm}{\textbf{Résumé} :
+        Un petit abstract ? ;)
+    }
+
+    \vspace{0.5cm}
+
+    \parbox{15cm}{
+        \textbf{Mots-clefs} : \it M2 AAIS – Observatoire – Grenade – IRAM – 30m
+    }
+
+    \vspace{0.5cm}
+
+    \parbox{15cm}{
+        Stage encadré par :
+
+        \textbf{Anaëlle Maury} \\
+        \href{mailto:anaelle.maury@cea.fr}{\tt anaelle.maury@cea.fr} / tél. (+33) 1 69 08 36 61 \\
+        CEA/DRF/IRFU/SAp/LFEMI – Bât. 709 – Bureau 131 \\
+        Service d’Astrophysique (SAp – UMR7158 Astrophysique, Instrumentation et Modélisation) \\
+        Laboratoire de Formation des Etoiles et du Milieu Interstellaire (LFEMI) \\
+        \url{http://irfu.cea.fr/Sap/}
+
+        \textit{
+            CEA – Centre d’Études de Saclay \\
+            Orme des Merisiers \\
+            91191 Gif-sur-Yvette CEDEX
+        }
+    }
+
+    \vspace{0.5cm}
+
+    \hfill \includegraphics[height=2.5cm]{logo_cea.pdf} \hfill \includegraphics[height=2.5cm]{logo_irfu.png} \hfill \includegraphics[height=2.5cm]{logo_aim.jpg} \hfill \null \\
+    \vspace{0.5cm}
+    \hfill \includegraphics[height=2.5cm]{logo_iram.png} \hfill \includegraphics[height=2.5cm]{logo_upd.png} \hfill \null \\
+
+\end{center}
+
+\vfill
+\hfill \thedate
+
+\newpage
+
+\thispagestyle{empty}
+
+\section*{Remerciements}
+
+\tableofcontents
+
+\newpage
+
+\pagenumbering{arabic}
 
 \section{Avant-propos}
 
