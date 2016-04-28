@@ -162,7 +162,6 @@ observations souhaitées, le télescope et son fonctionnement…
 
 TODO: Du blabla sur les sources, leur intérêt.
 
-TODO: Lister les fréquences d’intérêt sous la forme d’un tableau
 \begin{table}
   \caption[]{Liste des fréquences des principales transitions des molécules obervées}
   \label{frequence_transition}
@@ -171,6 +170,7 @@ TODO: Lister les fréquences d’intérêt sous la forme d’un tableau
     \hline
     \hline
 Molécule & Transition & Fréquence (GHz) \\
+    \hline
 H13CO+   &(1-0)    & 86.754285      \\
 HCN      &(1-0)    & 88.631847      \\
 HCO+     &(1-0)    & 89.188523      \\
@@ -196,6 +196,24 @@ N2D+     &(3-2)	   & 231.32166      \\
 \end{table}
 Côté télescope, le récepteur EMIR permet de faire cela. Il peut fonctionner
 dans 4 bandes de fréquences différentes :
+
+\begin{table}
+  \caption[]{Caractéristiques d'EMIR}
+  \label{freqency_EMIR}
+  $$ 
+  \begin{array}{cccc}
+    \hline
+    \hline
+Bande & Fréquence (GHz) & LSB (GHz) & USB (GHz) \\
+E0    &  73 - 117       & 73-97     & 89-117\\
+E1    & 125 - 184       & 125-168   & 141-184\\
+E2    & 202 - 274       & 202 (LO) - 268 (LI) & 217 (UI) - 274(UO)\\
+E3    & 277 - 335       & 277 - 335 & 293-350\\
+ \hline
+  \end{array}
+  $$
+\end{table}
+
 
 TODO: lister les récepteurs et leurs plages.
 
