@@ -215,12 +215,28 @@ proto-stellaires.
 TODO: Un peu plus de blabla sur les sources, leur intérêt. Inclure des figures
 envoyées par Anaelle.
 
-TODO: Du blabla sur les fréquences d’intérêt, pourquoi elles le sont.
+Pour étudier un nuage de formation d’étoiles, il est possible de s’intéresser à
+différentes molécules et transitions associées. L’intérêt du domaine
+millimétrique réside notamment dans la possibilité de construire relativement
+facilement de grands télescopes, résultant en de grandes résolutions
+angulaires. De plus, l’atmosphère terrestre est peu gênante à ces longueurs
+d’ondes. Seule une grande quantité de vapeur d’eau dans l’atmosphère peut nous
+poser problème, ce qui peut être le cas par mauvais temps.
+
+L’une des molécules les plus standards dans l’étude des nuages est \ce{CO},
+présente partout et qui permet de tracer les contours à grande échelle des
+nuages. D’autre part, son abondance est telle que celle de ses isotopes n’est
+pas négligeable non plus, \ce{^13CO} et \ce{C^18O} permettent de tracer un peu
+mieux les régions denses. En cas de présence d’\textit{outflows}, ces raies
+sont les plus susceptibles de nous permettre un bon traçage. D’autres molécules
+permettent de tracer les régions très denses, chaudes ou froides… Lors de la
+préparation, une liste des transitions potentiellement observables fût établie.
+Elle est présentée \cref{tab:raies_setup}. Évidemment, un certain nombre
+d’entre elles ne seront pas forcément présentes, et d’autres peuvent
+apparaître.
 
 \begin{table}[ht]
     \centering
-    \caption[]{Liste des fréquences des principales transitions des molécules attendues}
-    \label{frequence_transition}
     \begin{tabular}{ccc}
         \hline
         \hline
@@ -247,17 +263,32 @@ TODO: Du blabla sur les fréquences d’intérêt, pourquoi elles le sont.
         \ce{N2D+}      &(3-2)       & \num{231.32166 } \\
         \hline
     \end{tabular}
+    \caption{Liste des fréquences des principales transitions des molécules
+    attendues}
+    \label{tab:raies_setup}
 \end{table}
 
+Ces raies seront plus ou moins intenses et larges en fonction de leurs
+caractéristiques intrinsèques et de la densité des espèces correspondantes,
+mais pourront également présenter plusieurs composantes avec la présence
+d’éventuels \textit{outflows}.
 
-TODO: Une phrase de transition entre ce qu’on veut observer et comment on va le faire.
+Nous voudrions donc pouvoir disposer d’une assez bonne résolution angulaire
+pour réaliser la cartographie de la région d’intérêt, une relativement bonne
+résolution spectrale pour bien séparer les raies et leurs éventuelles
+composantes, tout en étant assez large bande pour couvrir plusieurs raies à la
+fois.
 
 Côté télescope, le récepteur EMIR permet de faire cela. Il peut fonctionner
-dans 4 bandes de fréquences différentes :
+dans 4 bandes de fréquences différentes, présentées \cref{tab:emir}. Par
+rapport aux raies à observer, on peut constater qu’elle tombe dans les
+récepteurs E0 et E2. En fait, c’est par construction, car les possibilités de
+fonctionnement d’EMIR ont été pensées en fonction des raies connues et d’autres
+paramètres techniques, et nos listes de raies ont été elles-mêmes conçues pour
+correspondre à ces détecteurs, pouvant fonctionner de pair.
 
 \begin{table}[ht]
     \centering
-    \caption[]{Caractéristiques d'EMIR}
     \begin{tabular}{cccc}
         \hline
         \hline
@@ -268,46 +299,66 @@ dans 4 bandes de fréquences différentes :
         E3    & \numrange{277}{335} & \numrange{277}{335} & \numrange{293}{350} \\
         \hline
     \end{tabular}
+    \caption{Caractéristiques d’EMIR. EMIR se règle à une fréquence donnée, et
+    dispose 4 blocs autour de cette fréquence, 2 au-dessous et 2 au-dessus.}
+    \label{tab:emir}
 \end{table}
 
 Pour chaque récepteur, il est possible de connecter plusieurs
 \textit{backends}. La plupart des \textit{backends} sont indépendants entre eux
-(c’est a minima le cas de ceux utilisés, FTS et VESPA), mais pour un détecteur
+(c’est presque le cas de ceux utilisés, FTS et VESPA), mais pour un détecteur
 donné, toutes les combinaisons de branchements ne sont pas possibles. Il était
 donc d’autant plus important de réfléchir à l’avance aux \textit{setups} que
-nous allions utiliser.
+nous allions utiliser. FTS propose des détecteurs très larges bandes (environ
+\SI{8}{\giga\hertz} chacun, pour un total de 8), mais disposant évidemment
+d’une résolution spectrale limitée. Toutes les combinaisons des 8 détecteurs ne
+sont pas possibles, et les choix de positionnement ou résolution sont très
+limités. VESPA propose au contraire des détecteurs à bande très étroite, mais
+disposant d’une grande sensibilité et offrant de très nombreux réglages.
 
 Après vérifications des différentes possibilités, et en tenant compte des éventuelles
-difficultés météo, nous avons préparé quatre ensembles de possibilités.
+difficultés météo, nous avons préparé un ensemble de quatre \textit{setups},
+présentés
+\cref{fig:specsetup_1mm,fig:specsetup_3mm,fig:specsetup_3mm_1mm_u,fig:specsetup_3mm_1mm_l}.
+Le but était d’avoir à minima les raies de \ce{CO} et de ses isotopes, et
+d’essayer de maximiser au mieux possible le nombre de raies observées et la
+résolution à laquelle celles-ci l’étaient.
 
-TODO: Commentaires sur les choix.
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/specsetup-1mm.pdf}
     \caption{Plages de fréquences sélectionnées pour les observations à \unmm.}
+    \label{fig:specsetup_1mm}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/specsetup-3mm.pdf}
     \caption{Plages de fréquences sélectionnées pour les observations à \troismm.}
+    \label{fig:specsetup_3mm}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/specsetup-3mm-1mm-u.pdf}
     \caption{Plages de fréquences sélectionnées pour les observations combinées à \unmm{} et \troismm.}
+    \label{fig:specsetup_3mm_1mm_u}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/specsetup-3mm-1mm-l.pdf}
     \caption{Plages de fréquences complémentaires pour les observations combinées à \unmm{} et \troismm.}
+    \label{fig:specsetup_3mm_1mm_l}
 \end{figure}
 
 Sur place, la découverte du mode \textit{parallel} de VESPA grâce à la présence
 de Gabriel \textsc{Paubert} en tant qu’\textit{Astronomer on duty} nous a
 permis d’optimiser plus encore nos \textit{setups}.
+
+Si la résolution angulaire est moins bonne à \troismm, la dépendance en la
+qualité de la météo est également bien moindre, ce qui permet d’observer quand
+même en cas de mauvais temps.
 
 \section{Le voyage}
 
