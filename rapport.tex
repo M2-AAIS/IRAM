@@ -242,25 +242,25 @@ apparaître.
         \hline
         Molécule & Transition & Fréquence (\GHz) \\
         \hline
-        \ce{H^13CO+}   &(1-0)       & \num{ 86.754285} \\
-        \ce{HCN}       &(1-0)       & \num{ 88.631847} \\
-        \ce{HCO+}      &(1-0)       & \num{ 89.188523} \\
-        \ce{N2H+}      &(1-0)       & \num{ 93.176258} \\
-        \ce{CH3OH}     &(2-1)       & \num{ 96.741377} \\
-        \ce{CS}        &(2-1)       & \num{ 97.980968} \\
-        \ce{C^18O}     &(1-0)       & \num{109.78218 } \\
-        \ce{^13CO}     &(1-0)       & \num{110.20135 } \\
-        \ce{^12CO}     &(1-0)       & \num{115.27120 } \\
-        \ce{e-CH3OH}   &            & \num{216.945559} \\
-        \ce{SiO}       &(5-4)       & \num{217.104984} \\
-        \ce{C^18O}     &(2-1)       & \num{219.560319} \\
-        \ce{H2{}^13CO} &(3-2)       & \num{219.908525} \\
-        \ce{SO}        &(5,6-4,5)   & \num{219.949433} \\
-        \ce{^13CO}     &(2-1)       & \num{220.398686} \\
-        \ce{CH3CN}     &12(5)-11(5) & \num{220.641096} \\
-        \ce{^12CO}     &(2-1)       & \num{230.538000} \\
-        \ce{^13CS}     &(5-4)       & \num{231.22069 } \\
-        \ce{N2D+}      &(3-2)       & \num{231.32166 } \\
+        \ce{H^13CO+}   &(1-0)   & \num{ 86.75429} \\
+        \ce{HCN}       &(1-0)   & \num{ 88.63185} \\
+        \ce{HCO+}      &(1-0)   & \num{ 89.18852} \\
+        \ce{N2H+}      &(1-0)   & \num{ 93.17370} \\
+        \ce{CH3OH}     &(2-1)   & \num{ 96.74138} \\
+        \ce{CS}        &(2-1)   & \num{ 97.98095} \\
+        \ce{C^18O}     &(1-0)   & \num{109.78217} \\
+        \ce{^13CO}     &(1-0)   & \num{110.20135} \\
+        \ce{^12CO}     &(1-0)   & \num{115.27120} \\
+        \ce{e-CH3OH}   &(5-4)   & \num{216.94560} \\
+        \ce{SiO}       &(5-4)   & \num{217.10498} \\
+        \ce{C^18O}     &(2-1)   & \num{219.56035} \\
+        \ce{H2{}^13CO} &(3-2)   & \num{219.90853} \\
+        \ce{SO}        &(6-5)   & \num{219.94944} \\
+        \ce{^13CO}     &(2-1)   & \num{220.39868} \\
+        \ce{CH3CN}     &(12-11) & \num{220.64108} \\
+        \ce{^12CO}     &(2-1)   & \num{230.53800} \\
+        \ce{^13CS}     &(5-4)   & \num{231.22069} \\
+        \ce{N2D+}      &(3-2)   & \num{231.32183} \\
         \hline
     \end{tabular}
     \caption{Liste des fréquences des principales transitions des molécules
@@ -505,26 +505,72 @@ précédents, de sorte à obtenir des cartes plus précises. En effet, l’un de
 intérêts de nos \textit{setups} était de pouvoir combiner facilement les
 données issues des différentes observations.
 
-TODO: Lister les raies observées, leurs caractéristiques et par conséquent la
-présence d’outflow. Parler de la raie tellurique.
+En plus d’une partie des raies prévues au \cref{tab:raies_setup} (notamment
+\ce{CO} et tous ses isotopes), d’autres raies ont été observées, dont certaines
+sont listées \cref{tab:raies_bonus}. La présence de \ce{C^17O} indique du gaz
+vraiment dense.
 
-TODO: Fréquences bonus
-HC3N(12-11)         109.1736
+D’autre part, les raies de \ce{CO} (et isotopes) présentent deux composantes,
+indiquant la présence d’un ou deux \textit{outflows}. Le fait que même
+\ce{C^17O} soit concerné montre que ceux-ci sont vraiment très forts. La raie
+de \ce{^12CO} présentait également une troisième composante, mais celle-ci a
+disparu une fois le spectre de la source de référence soustrait : en effet, la
+raie observée sur toutes les sources de référence avait un décalage en vitesse
+différent, impliquant une provenance d’un quelconque avant plan. En fin de
+compte, elle n’était pas due au nuage de gaz ou au milieu interstellaire en
+avant plan, il s’agissait en fait tout simplement de la raie tellurique ! D’où
+une présence sur l’ensemble des spectres mesurés. Nos positions de référence
+étaient donc bien propres finalement. Merci à Laurent \textsc{Pagani} pour
+cette remarque judicieuse.
 
-C17O(1-0)           112.359    J=1-0,     F=7/2-5/2
-C17O(1-0)           112.360    J=1-0,     F=5/2-5/2
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{ccc}
+        \hline
+        \hline
+        Molécule & Transition & Fréquence (\GHz) \\
+        \hline
+        \ce{HC3N}  & (12-11) & \num{109.17363} \\
+        \ce{C^17O} & (1-0)   & \num{112.35898} \\
+        \ce{C^17O} & (1-0)   & \num{112.36001} \\
+        \ce{CN}    & (1-0)   & \num{113.12337} \\
+        \ce{CN}    & (1-0)   & \num{113.14416} \\
+        \ce{CN}    & (1-0)   & \num{113.17049} \\
+        \ce{CN}    & (1-0)   & \num{113.19128} \\
+        \ce{CN}    & (1-0)   & \num{113.48812} \\
+        \ce{CN}    & (1-0)   & \num{113.49097} \\
+        \ce{CN}    & (1-0)   & \num{113.49964} \\
+        \ce{CN}    & (1-0)   & \num{113.50891} \\
+        \ce{CN}    & (1-0)   & \num{113.52043} \\
+        \hline
+    \end{tabular}
+    \caption{
+        Liste des fréquences de certaines transitions supplémentaires
+        observées. Il y a deux groupes de raies pour \ce{CN}, et les neufs
+        raies ont été observées avec les bons rapports.
+    }
+    \label{tab:raies_bonus}
+\end{table}
 
-CN(1-0)             113.12337  J=1/2-1/2, F=1/2-1/2
-CN(1-0)             113.14416  J=1/2-1/2, F=1/2-3/2
-CN(1-0)             113.17049  J=1/2-1/2, F=3/2-1/2
-CN(1-0)             113.19128  J=1/2-1/2, F=3/2-3/2
-CN(1-0)             113.48812  J=3/2-1/2, F=3/2-1/2
-CN(1-0)             113.49097  J=3/2-1/2, F=5/2-3/2
-CN(1-0)             113.49964  J=3/2-1/2, F=1/2-1/2
-CN(1-0)             113.50891  J=3/2-1/2, F=3/2-3/2
-CN(1-0)             113.52043  J=3/2-1/2, F=1/2-3/2
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.9\textwidth]{12COfull.png}
+    \caption{12COfull}
+\end{figure}
 
-TODO: Ajouter les figures de Jan.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.9\textwidth]{12COblue.png}
+    \caption{12COblue}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.9\textwidth]{12COred.png}
+    \caption{12COred}
+\end{figure}
+
+TODO: Commenter les figures de Jan.
 
 \begin{figure}[ht]
     \centering
