@@ -497,12 +497,16 @@ quelques \textit{on/off} en \textit{frequency switching} avec la position de
 référence et Anaëlle a réussi à réparer toutes les données.
 
 Nous avons conclu cette dernière journée d’observations par une visite de
-l’intérieur du télescope, très intéressante et instructive !
+l’intérieur du télescope, très intéressante et instructive ! Les technologies
+qui se dissimulent dans ses méandres sont assez impressionnante, et la capacité
+de l’IRAM à avoir transformé l’intérieur pour accueillir NIKA~2 est bluffante.
+Mention spéciale au « trancheur de têtes ».
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=0.9\textwidth]{inside.jpg}
-    \caption{À l’intérieur du télescope.}
+    \caption{À l’intérieur du télescope. Le fameux « trancheur de têtes » est
+    visible au fond à gauche, ici à l’arrêt.}
 \end{figure}
 
 \section{Les données obtenues}
@@ -563,34 +567,50 @@ cette remarque judicieuse.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.9\textwidth]{12COfull.png}
-    \label{12COfull}
+    \caption{Raie complète de \ce{^12CO} (2→1).}
+    \label{fig:12COfull}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.9\textwidth]{12COblue.png}
-    \label{12COblue}
+    \caption{Partie inférieure de la raie de \ce{^12CO} (2→1).}
+    \label{fig:12COblue}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.9\textwidth]{12COred.png}
-    \label{12COred}
+    \caption{Partie supérieure de la raie de \ce{^12CO} (2→1).}
+    \label{fig:12COred}
 \end{figure}
 
-Les figures \ref{12COfull} à \ref{12COred} présentent les observations que l'on a pu faire de la raie  de $^{12}CO$ (2→1) à       \SI{230.538}{\giga\hertz}, recentrée à la vitesse du cœur de la source ($\sim$ - 3 km.s$^{-1}$). On peut observer successivement les cartes obtenues avec la raie complète (fig. \ref{12COfull}), ou en séparant les zones de vitesse respectivement inférieures fig. \ref{12COblue}) ou supérieures (fig. \ref{12COred}), c'est à dire des zones respectivement se rapprochant ou s'éloignant de l'observateur par rapport au cœur dense. Ce cœur apparaît sur la carte figure     \ref{mapC17O}, ou l'on a choisi le $^{17}CO$, qui a une densité de colonne plus faible sur la ligne de visée, et est donc meilleur traceur du gaz dense au repos. Sur cette carte on a fait figurer des isocontours de densité (par intervalles de 5 $\sigma$ par rapport à un bruit calculé en dehors de la zone portant intérêt) du $^{12}CO$ dans les zones de vitesse cités ci-dessus, faisant apparaître nettement un flot protostellaire bidirectionnel.
+Les \cref{fig:12COfull,fig:12COblue,fig:12COred} présentent les observations
+que nous avons pu faire de la raie de \ce{^12CO} (2→1) à
+\SI{230.538}{\giga\hertz}, recentrée à la vitesse du cœur de la source ($\sim$
+\SI{-3}{\kilo\meter\per\second}). On peut observer successivement les cartes
+obtenues avec la raie complète (\cref{fig:12COfull}), ou en séparant les zones
+de vitesse respectivement inférieures (\cref{fig:12COblue}) ou supérieures
+(\cref{fig:12COred}), c’est à dire des zones respectivement se rapprochant ou
+s’éloignant de l’observateur par rapport au cœur dense. Ce cœur apparaît sur la
+carte \cref{fig:mapC17O}, ou l’on a choisi le \ce{^17CO}, qui a une densité de
+colonne plus faible sur la ligne de visée, et est donc meilleur traceur du gaz
+dense au repos. Sur cette carte on a fait figurer des isocontours de densité
+(par intervalles de 5 $\sigma$ par rapport à un bruit calculé en dehors de la
+zone portant intérêt) du \ce{^12CO} dans les zones de vitesse cités ci-dessus,
+faisant apparaître nettement un flot protostellaire bidirectionnel.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[height=6cm]{mapC17O.png}
     \caption{
-        Carte des flots observés de CO. En bleu le $^{12}CO$ « blueshifté ». En
-        rouge le flot « redshifté ». Les isocontours de vitesse sont pris avec
-        comme référence la vitesse de la raie principale de $^{12}CO$ (2→1) à
-        \SI{230.538}{\giga\hertz}, observée dans le \setup{} à \unmm. Les bins
-        de densité ont été réalisés avec la raie de $^{17}CO$.
+        Carte des flots observés de CO. En bleu le \ce{^12CO} « blueshifté ».
+        En rouge le flot « redshifté ». Les isocontours de vitesse sont pris
+        avec comme référence la vitesse de la raie principale de \ce{^12CO}
+        (2→1) à \SI{230.538}{\giga\hertz}, observée dans le \setup{} à \unmm.
+        Les bins de densité ont été réalisés avec la raie de \ce{^17CO}.
     }
-    \label{mapC17O}
+    \label{fig:mapC17O}
 \end{figure}
 
 \section*{Conclusion}
