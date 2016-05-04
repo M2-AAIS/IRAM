@@ -23,7 +23,11 @@
     hyperindex=true,
 ]{hyperref}
 
-\usepackage{amsmath} % Est-ce qu’on va vraiment s’en servir ?
+\usepackage{appendix}
+\renewcommand{\appendixpagename}{Annexes}
+\renewcommand{\appendixtocname}{Annexes}
+
+\usepackage{amsmath}
 
 \usepackage[version=4]{mhchem}
 
@@ -44,6 +48,7 @@
 
 \usepackage{fontspec}
 \usepackage{babel}
+\frenchbsetup{ItemLabels=\textendash}
 
 \usepackage{graphicx}
 \graphicspath{{figures/}}
@@ -75,12 +80,7 @@
 \begin{document}
 
 \pagenumbering{roman}
-
-% Pour faciliter la mise en forme des pages de garde, on supprime l’indentation
-% automatique en début de paragraphe
 \setlength{\parindent}{0pt}
-
-% Pas d’en-tête ni de pied pour la première page
 \thispagestyle{empty}
 
 \includegraphics[height=2cm]{logo_insu.jpg} \hfill
@@ -117,7 +117,7 @@
 
     \vspace{1.5cm}
 
-    \parbox{15cm}{\textbf{Résumé} :
+    \parbox{15cm}{\textbf{Résumé} :
         La compréhension des processus conduisant à la formation d’étoiles est
         une question majeure de l’astrophysique. Les observations de la
         cinématique et de la composition des nuages proto-stellaires peuvent
@@ -136,13 +136,13 @@
     \vspace{0.5cm}
 
     \parbox{15cm}{
-        \textbf{Mots-clefs} : \it M2 AAIS – Observatoire – Grenade – IRAM – 30m
+        \textbf{Mots-clefs} : \it M2 AAIS – Observatoire – Grenade – IRAM – 30m
     }
 
     \vspace{0.5cm}
 
     \parbox{15cm}{
-        Stage encadré par :
+        Stage encadré par :
 
         \textbf{Anaëlle Maury} \\
         \href{mailto:anaelle.maury@cea.fr}{\tt anaelle.maury@cea.fr} / tél. (+33) 1 69 08 36 61 \\
@@ -194,11 +194,10 @@ que pour les nombreuses et riches discussions que nous avons eues avec elle.
 \newpage
 
 \pagenumbering{arabic}
-
 \setlength{\parindent}{16pt}
 \setlength{\parskip}{1ex}
 
-\section{Avant-propos}
+\section{La préparation}
 
 Le temps de télescope étant précieux, nous nous sommes préparés plusieurs mois
 avant le début du stage afin de profiter au mieux du temps d’observation qui
@@ -212,8 +211,9 @@ durant cette semaine permettra de confronter certaines théories, notamment sur
 le rôle des jets dans la cinématique et les turbulences au sein des amas
 proto-stellaires.
 
-TODO: Un peu plus de blabla sur les sources, leur intérêt. Inclure des figures
-envoyées par Anaelle.
+La région étudiée contient un beau cœur pré-stellaire (et quelques autres
+autour), observé notamment par Herschel et Spitzer. La présence potentielle
+d’\textit{outflows} a déjà été mise en évidence à l’aide de SMA.
 
 Pour étudier un nuage de formation d’étoiles, il est possible de s’intéresser à
 différentes molécules et transitions associées. L’intérêt du domaine
@@ -299,8 +299,8 @@ correspondre à ces détecteurs, pouvant fonctionner de pair.
         E3    & \numrange{277}{335} & \numrange{277}{335} & \numrange{293}{350} \\
         \hline
     \end{tabular}
-    \caption{Caractéristiques d’EMIR. EMIR se règle à une fréquence donnée, et
-    dispose 4 blocs autour de cette fréquence, 2 au-dessous et 2 au-dessus.}
+    \caption{Caractéristiques d’EMIR. Celui-ci se règle à une fréquence donnée, et
+    dispose 4 blocs autour.}
     \label{tab:emir}
 \end{table}
 
@@ -319,38 +319,10 @@ disposant d’une grande sensibilité et offrant de très nombreux réglages.
 Après vérifications des différentes possibilités, et en tenant compte des éventuelles
 difficultés météo, nous avons préparé un ensemble de quatre \textit{setups},
 présentés
-\cref{fig:specsetup_1mm,fig:specsetup_3mm,fig:specsetup_3mm_1mm_u,fig:specsetup_3mm_1mm_l}.
-Le but était d’avoir à minima les raies de \ce{CO} et de ses isotopes, et
-d’essayer de maximiser au mieux possible le nombre de raies observées et la
-résolution à laquelle celles-ci l’étaient.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.9\textwidth]{specsetup-1mm.pdf}
-    \caption{Plages de fréquences sélectionnées pour les observations à \unmm.}
-    \label{fig:specsetup_1mm}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.9\textwidth]{specsetup-3mm.pdf}
-    \caption{Plages de fréquences sélectionnées pour les observations à \troismm.}
-    \label{fig:specsetup_3mm}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.9\textwidth]{specsetup-3mm-1mm-u.pdf}
-    \caption{Plages de fréquences sélectionnées pour les observations combinées à \unmm{} et \troismm.}
-    \label{fig:specsetup_3mm_1mm_u}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.9\textwidth]{specsetup-3mm-1mm-l.pdf}
-    \caption{Plages de fréquences complémentaires pour les observations combinées à \unmm{} et \troismm.}
-    \label{fig:specsetup_3mm_1mm_l}
-\end{figure}
+\cref{fig:specsetup_1mm,fig:specsetup_3mm,fig:specsetup_3mm_1mm_u,fig:specsetup_3mm_1mm_l}
+(à l’\cref{app:setups}). Le but était d’avoir à minima les raies de \ce{CO} et
+de ses isotopes, et d’essayer de maximiser au mieux possible le nombre de raies
+observées et la résolution à laquelle celles-ci l’étaient.
 
 Sur place, la découverte du mode \textit{parallel} de VESPA grâce à la présence
 de Gabriel \textsc{Paubert} en tant qu’\textit{Astronomer on duty} nous a
@@ -361,8 +333,6 @@ qualité de la météo est également bien moindre, ce qui permet d’observer q
 même en cas de mauvais temps.
 
 \section{Le voyage}
-
-TODO: Une petite photo ? Ou deux. :p Je vous laisse le choix, personellement j'ai pas ce qui faut pour ça (essentielement des nuages)
 
 Le voyage a été très bien organisé en amont. Les dates choisies pour le voyage
 étaient parfaitement adaptées aux créneaux réservés pour nous au télescope (pas
@@ -408,18 +378,18 @@ l’Alhambra de nuit. Le retour à Paris se passa sans encombre.
 \section{Les observations}
 
 Le premier jour, nous avons commencé par prendre en main les différents outils
-présents sur place : PaKo, Xephem, MIRA, TAPAS…
+présents sur place : PaKo, Xephem, MIRA, TAPAS…
 
-Les tâches étaient réparties sur 3 à 4 postes :
+Les tâches étaient réparties sur 3 à 4 postes :
 \begin{itemize}
     \item Un poste contrôlait Xephem pour vérifier le positionnement du
           télescope dans le ciel, sa position vis-à-vis du
           pointage demandé et sa position par rapport au Soleil. Il déterminait aussi le
-          choix de la topologie « high » ou « low » en fonction de la
+          choix de la topologie « high » ou « low » en fonction de la
           trajectoire des sources sur le ciel et des contraintes du télescope…
     \item Un second poste contrôlait PaKo pour gérer les instructions envoyées
           au télescope et vérifier la bonne prise en compte de celles-ci. C’est
-          également à ce poste que le « cahier d’observations » TAPAS était
+          également à ce poste que le « cahier d’observations » TAPAS était
           rempli.
     \item Un troisième poste servait à analyser les données à l’aide de MIRA
           pour fournir les corrections à apporter dans PaKo et visualiser les
@@ -432,12 +402,13 @@ Les tâches étaient réparties sur 3 à 4 postes :
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.9\textwidth]{control_room.jpg}
-    \caption{La salle de contrôle, avec les différents postes.}
+    \caption{Une (petite) partie de la salle de contrôle, avec les différents
+    postes que nous utilisions.}
 \end{figure}
 
 Toujours le premier jour, nous avons commencé dans un premier temps à nous
 familiariser avec les différentes étapes à réaliser en début de chaque
-observation :
+observation :
 \begin{itemize}
     \item Choix du \setup{} en fonction de la météo et des observations
           souhaitées, puis \textit{tuning} par l’opérateur. Nous remercions à
@@ -452,7 +423,7 @@ observation :
 \end{itemize}
 
 Nous observions chaque jour de 8 h 30 à 16 h. Le premier jour, nous avons
-récupéré la main tôt : la météo fût catastrophique durant la nuit, et était
+récupéré la main tôt : la météo fût catastrophique durant la nuit, et était
 assez mitigée le matin. Nous avons donc décidé de commencer sur le \setup{} à
 \troismm.
 
@@ -477,10 +448,10 @@ encore plus dégagé, pour aboutir à une opacité quasiment nulle. En fin de
 journée, nous avons gardé un peu de temps pour persister dans nos recherches
 d’une position de référence propre, toujours sans plus de succès.
 
-Le second jour, la météo s’annonçait superbe dès le début : nous sommes partis
+Le second jour, la météo s’annonçait superbe dès le début : nous sommes partis
 directement sur le \setup{} à \unmm. Enfin, presque. Nous avons eu quelques
-soucis de fichiers de configuration manquants, heureusement rapidement
-restaurés grâce à Gabriel.
+soucis de fichiers de configuration manquants (probablement suite à une fausse
+manipulation la veille), heureusement rapidement restaurés grâce à Gabriel.
 
 Le troisième et dernier jour, la météo n’était pas très bonne. Nous avons
 décidé d’utiliser uniquement le \setup{} à \troismm. Cependant, comme c’était
@@ -490,24 +461,24 @@ l’\textit{offset} indiqué pour la position de référence était nul, car nou
 devions le régler une fois cette position choisie. Ce que nous avions fait pour
 l’autre script, mais pas celui-ci. Les premières données nous paraissaient
 évidemment aberrantes, sans que nous ne comprenions pourquoi. Une fois de plus,
-c’est l’arrivée de Gabriel, qui revenait du ski, qui nous a débloquée. Il a
-tout suite suggéré de vérifier la position de référence, et nous nous sommes
-aperçus de notre erreur. Heureusement, celle-ci était corrigible moyennant
-quelques \textit{on/off} en \textit{frequency switching} avec la position de
-référence et Anaëlle a réussi à réparer toutes les données.
+c’est l’arrivée de Gabriel — qui revenait du ski —, qui nous a débloquée. Il a
+tout suite suggéré de vérifier la position de référence que nous utilisions, et
+nous nous sommes alors aperçus de notre erreur. Heureusement, celle-ci était
+corrigible moyennant quelques \textit{on/off} en \textit{frequency switching}
+avec la position de référence et Anaëlle a réussi à réparer toutes les données.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.895\textwidth]{inside.jpg}
+    \caption{À l’intérieur du télescope. Le fameux « trancheur de têtes » est
+    visible au fond à gauche, ici à l’arrêt.}
+\end{figure}
 
 Nous avons conclu cette dernière journée d’observations par une visite de
 l’intérieur du télescope, très intéressante et instructive ! Les technologies
 qui se dissimulent dans ses méandres sont assez impressionnante, et la capacité
 de l’IRAM à avoir transformé l’intérieur pour accueillir NIKA~2 est bluffante.
-Mention spéciale au « trancheur de têtes ».
-
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.9\textwidth]{inside.jpg}
-    \caption{À l’intérieur du télescope. Le fameux « trancheur de têtes » est
-    visible au fond à gauche, ici à l’arrêt.}
-\end{figure}
+Mention spéciale au « trancheur de têtes ».
 
 \section{Les données obtenues}
 \label{sec:resultats}
@@ -521,19 +492,6 @@ En plus d’une partie des raies prévues au \cref{tab:raies_setup} (notamment
 \ce{CO} et tous ses isotopes), d’autres raies ont été observées, dont certaines
 sont listées \cref{tab:raies_bonus}. La présence de \ce{C^17O} indique du gaz
 vraiment dense.
-
-D’autre part, les raies de \ce{CO} (et isotopes) présentent deux composantes,
-indiquant la présence d’un ou deux \textit{outflows}. Le fait que même
-\ce{C^17O} soit concerné montre que ceux-ci sont vraiment très forts. La raie
-de \ce{^12CO} présentait également une troisième composante, mais celle-ci a
-disparu une fois le spectre de la source de référence soustrait : en effet, la
-raie observée sur toutes les sources de référence avait un décalage en vitesse
-différent, impliquant une provenance d’un quelconque avant plan. En fin de
-compte, elle n’était pas due au nuage de gaz ou au milieu interstellaire en
-avant plan, il s’agissait en fait tout simplement de la raie tellurique ! D’où
-une présence sur l’ensemble des spectres mesurés. Nos positions de référence
-étaient donc bien propres finalement. Merci à Laurent \textsc{Pagani} pour
-cette remarque judicieuse.
 
 \begin{table}[ht]
     \centering
@@ -564,55 +522,36 @@ cette remarque judicieuse.
     \label{tab:raies_bonus}
 \end{table}
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.9\textwidth]{12COfull.png}
-    \caption{Raie complète de \ce{^12CO} (2→1).}
-    \label{fig:12COfull}
-\end{figure}
+D’autre part, les raies de \ce{CO} (et isotopes) présentent deux composantes,
+indiquant la présence d’un ou deux \textit{outflows}. Le fait que même
+\ce{C^17O} soit concerné montre que ceux-ci sont vraiment très forts. La raie
+de \ce{^12CO} présentait également une troisième composante, mais celle-ci a
+disparu une fois le spectre de la source de référence soustrait : en effet, la
+raie observée sur toutes les sources de référence avait un décalage en vitesse
+différent, impliquant une provenance d’un quelconque avant plan. En fin de
+compte, elle n’était pas due au nuage de gaz ou au milieu interstellaire en
+avant plan, il s’agissait en fait tout simplement de la raie tellurique ! D’où
+une présence sur l’ensemble des spectres mesurés. Nos positions de référence
+étaient donc bien propres finalement. Merci à Laurent \textsc{Pagani} pour
+cette remarque judicieuse.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.9\textwidth]{12COblue.png}
-    \caption{Partie inférieure de la raie de \ce{^12CO} (2→1).}
-    \label{fig:12COblue}
-\end{figure}
+Les \cref{fig:12COfull,fig:12COblue,fig:12COred} (à l’\cref{app:resultats})
+présentent les observations que nous avons pu faire de la raie de \ce{^12CO}
+(2→1) à \SI{230.538}{\giga\hertz}, recentrée à la vitesse du cœur de la source
+($\sim$ \SI{-3}{\kilo\meter\per\second}). On peut observer successivement les
+cartes obtenues avec la raie complète (\cref{fig:12COfull}), ou en séparant les
+zones de vitesse respectivement inférieures (\cref{fig:12COblue}) ou
+supérieures (\cref{fig:12COred}), c’est à dire des zones respectivement se
+rapprochant ou s’éloignant de l’observateur par rapport au cœur dense. Ce cœur
+apparaît sur la carte \cref{fig:mapC17O}, ou l’on a choisi le \ce{^17CO}, qui a
+une densité de colonne plus faible sur la ligne de visée, et est donc meilleur
+traceur du gaz dense au repos. Sur cette carte on a fait figurer des
+isocontours de densité (par intervalles de 5 $\sigma$ par rapport à un bruit
+calculé en dehors de la zone portant intérêt) du \ce{^12CO} dans les zones de
+vitesse cités ci-dessus, faisant apparaître nettement un flot protostellaire
+bidirectionnel.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.9\textwidth]{12COred.png}
-    \caption{Partie supérieure de la raie de \ce{^12CO} (2→1).}
-    \label{fig:12COred}
-\end{figure}
-
-Les \cref{fig:12COfull,fig:12COblue,fig:12COred} présentent les observations
-que nous avons pu faire de la raie de \ce{^12CO} (2→1) à
-\SI{230.538}{\giga\hertz}, recentrée à la vitesse du cœur de la source ($\sim$
-\SI{-3}{\kilo\meter\per\second}). On peut observer successivement les cartes
-obtenues avec la raie complète (\cref{fig:12COfull}), ou en séparant les zones
-de vitesse respectivement inférieures (\cref{fig:12COblue}) ou supérieures
-(\cref{fig:12COred}), c’est à dire des zones respectivement se rapprochant ou
-s’éloignant de l’observateur par rapport au cœur dense. Ce cœur apparaît sur la
-carte \cref{fig:mapC17O}, ou l’on a choisi le \ce{^17CO}, qui a une densité de
-colonne plus faible sur la ligne de visée, et est donc meilleur traceur du gaz
-dense au repos. Sur cette carte on a fait figurer des isocontours de densité
-(par intervalles de 5 $\sigma$ par rapport à un bruit calculé en dehors de la
-zone portant intérêt) du \ce{^12CO} dans les zones de vitesse cités ci-dessus,
-faisant apparaître nettement un flot protostellaire bidirectionnel.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[height=6cm]{mapC17O.png}
-    \caption{
-        Carte des flots observés de CO. En bleu le \ce{^12CO} « blueshifté ».
-        En rouge le flot « redshifté ». Les isocontours de vitesse sont pris
-        avec comme référence la vitesse de la raie principale de \ce{^12CO}
-        (2→1) à \SI{230.538}{\giga\hertz}, observée dans le \setup{} à \unmm.
-        Les bins de densité ont été réalisés avec la raie de \ce{^17CO}.
-    }
-    \label{fig:mapC17O}
-\end{figure}
-
+\newpage
 \section*{Conclusion}
 \addcontentsline{toc}{section}{Conclusion}
 
@@ -628,6 +567,85 @@ qui ne sont a priori pas portés sur l’observation. Nous sommes très heureux
 d’avoir pu prendre part à cette expérience, et espérons pour les promotions
 suivantes que ce partenariat sera reconduit pour les années à venir.
 
-TODO: Une photo de la fin ?
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.9\textwidth]{alhambra.jpg}
+    \caption{L’Alhambra avec en arrière-plan la Sierra Nevada.}
+\end{figure}
+
+\newpage
+
+\appendix
+\appendixpage
+\addappheadtotoc
+
+\section{Setups observationnels}
+\label{app:setups}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{specsetup-1mm.pdf}
+    \caption{Plages de fréquences sélectionnées pour les observations à \unmm.}
+    \label{fig:specsetup_1mm}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{specsetup-3mm.pdf}
+    \caption{Plages de fréquences sélectionnées pour les observations à \troismm.}
+    \label{fig:specsetup_3mm}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{specsetup-3mm-1mm-u.pdf}
+    \caption{Plages de fréquences sélectionnées pour les observations combinées à \unmm{} et \troismm.}
+    \label{fig:specsetup_3mm_1mm_u}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{specsetup-3mm-1mm-l.pdf}
+    \caption{Plages de fréquences complémentaires pour les observations combinées à \unmm{} et \troismm.}
+    \label{fig:specsetup_3mm_1mm_l}
+\end{figure}
+
+\clearpage
+\section{Résultats}
+\label{app:resultats}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.94\textwidth]{12COfull.png}
+    \caption{Raie complète de \ce{^12CO} (2→1).}
+    \label{fig:12COfull}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.94\textwidth]{12COblue.png}
+    \caption{Partie inférieure de la raie de \ce{^12CO} (2→1).}
+    \label{fig:12COblue}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.94\textwidth]{12COred.png}
+    \caption{Partie supérieure de la raie de \ce{^12CO} (2→1).}
+    \label{fig:12COred}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.94\textwidth]{mapC17O.png}
+    \caption{
+        Carte des flots observés de CO. En bleu le \ce{^12CO} « blueshifté ».
+        En rouge le flot « redshifté ». Les isocontours de vitesse sont pris
+        avec comme référence la vitesse de la raie principale de \ce{^12CO}
+        (2→1) à \SI{230.538}{\giga\hertz}, observée dans le \setup{} à \unmm.
+        Les bins de densité ont été réalisés avec la raie de \ce{^17CO}.
+    }
+    \label{fig:mapC17O}
+\end{figure}
 
 \end{document}
